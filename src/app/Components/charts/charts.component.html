@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let chart of chartData.slice(0, 4)" class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-header text-center fw-bold text-uppercase">{{ chart.name }}</div>
+                <div class="card-body">
+                    <div #chartRef></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let chart of chartData.slice(4, 8)" class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-header text-center fw-bold text-uppercase">{{ chart.name }}</div>
+                <div class="card-body">
+                    <div #chartRef></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

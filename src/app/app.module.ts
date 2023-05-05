@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from '../app/Components/dashboard/dashboard.component';
+
+import { MapComponent } from './Components/map/map.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ChartsComponent } from './Components/charts/charts.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, MapComponent, ChartsComponent],
+  imports: [BrowserModule, AppRoutingModule, NgApexchartsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
