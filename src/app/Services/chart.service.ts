@@ -8,46 +8,47 @@ import { ChartData } from '../Models/ChartData';
 export class ChartService {
   constructor() {}
 
+  //* Loading charts data from object
   public chartData: ChartData[] = [
     {
       name: 'Laptop',
       series: [44, 55, 41],
-      labels: ['A', 'B', 'C'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Desktop Computer',
       series: [22, 33, 25],
-      labels: ['F', 'G', 'H'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Led',
       series: [11, 22, 18],
-      labels: ['K', 'L', 'M'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Ups',
       series: [18, 8, 7],
-      labels: ['N', 'O', 'P'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Multimedia',
       series: [22, 18, 7],
-      labels: ['Q', 'R', 'S'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Scanner',
       series: [11, 8, 7],
-      labels: ['T', 'U', 'V'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Color Printer',
       series: [11, 18, 8],
-      labels: ['W', 'X', 'Y'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
     {
       name: 'Black & White Printer',
       series: [1, 5, 10],
-      labels: ['Z', 'AB', 'AC'],
+      labels: ['Allocated', 'BER', 'Not Allocated'],
     },
   ];
 

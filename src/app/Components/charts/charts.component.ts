@@ -10,6 +10,7 @@ import { ChartService } from 'src/app/Services/chart.service';
 import { ChartData } from 'src/app/Models/ChartData';
 import { ApexOptions } from 'ng-apexcharts';
 import ApexCharts from 'apexcharts';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-charts',
@@ -22,15 +23,17 @@ export class ChartsComponent implements OnInit, AfterViewInit {
   chartData!: ChartData[];
   chartOptions!: ApexOptions;
 
-  constructor(private chartService: ChartService) {}
+  constructor(private chartService: ChartService, private router: Router) {}
 
   ngOnInit(): void {
+    //* Getting the data from Chart Service File
     this.chartService.getChartData().subscribe((data) => {
       this.chartData = data;
     });
   }
 
   ngAfterViewInit(): void {
+    //* Draw chart after rendering of main paged
     this.chartRefs.forEach((chartRef, index) => {
       const chartId = `chart-${index}`;
       const chartElement = chartRef.nativeElement;
@@ -39,6 +42,7 @@ export class ChartsComponent implements OnInit, AfterViewInit {
     });
   }
 
+  //* Initialization of the charts
   drawChart(chartId: string, chart: ChartData) {
     const options: ApexOptions = {
       chart: {
@@ -58,8 +62,11 @@ export class ChartsComponent implements OnInit, AfterViewInit {
         },
       },
       legend: {
+        fontSize: '13',
+        //fontWeight: 'bold',
         position: 'bottom',
         horizontalAlign: 'center',
+        offsetY: -40,
         showForSingleSeries: true,
       },
       responsive: [
@@ -82,5 +89,9 @@ export class ChartsComponent implements OnInit, AfterViewInit {
       document.getElementById(chartId),
       this.chartOptions
     ).render();
+  }
+
+  goToMap() {
+    this.router.navigate(['/map']);
   }
 }
